@@ -36,7 +36,11 @@
       </sequential>
     </macrodef>
 
-    <target name="check-idea-flex.skeleton.exists">
+    <target name="init">
+        <mkdir dir="${builddir}"/>
+    </target>
+
+    <target name="check-idea-flex.skeleton.exists" depends="init">
         <available file="${skeleton.download.path}" property="skeleton.exists"/>
     </target>
 

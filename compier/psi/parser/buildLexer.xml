@@ -6,7 +6,16 @@
     <!-- TODO: KT-77206 (Get rid of the skeleton downloading or use JFlex version instead of the commit hash) -->
     <property name="skeleton.version" value="486d14622bd240ceccd844a0e65d7c69e7e44735" />
     <property name="skeleton.download.path" value="${builddir}/idea-flex-${skeleton.version}.skeleton" />
-    <property name="foldername" value="main/kotlin/com/th/ktt" />
+    <property name="pkgname" value="com.th.ktt" />
+    <loadresource property="pkg.path">
+        <propertyresource name="pkgname"/>
+        <filterchain>
+            <tokenfilter>
+                <replacestring from="." to="/"/>
+            </tokenfilter>
+        </filterchain>
+    </loadresource>
+    <property name="foldername" value="main/kotlin/${pkg.path}" />
 
     <macrodef name="flex">
       <attribute name="flexfile"/>

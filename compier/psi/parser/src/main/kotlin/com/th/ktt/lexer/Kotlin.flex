@@ -1,4 +1,4 @@
-package org.jetbrains.kotlin.lexer;
+package com.th.ktt.lexer;
 
 import java.util.*;
 import com.intellij.lexer.*;

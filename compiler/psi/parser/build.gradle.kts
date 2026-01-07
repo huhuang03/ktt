@@ -20,3 +20,6 @@ tasks.test {
 kotlin {
     jvmToolchain(21)
 }
+
+
+ant.importBuild("buildLexer.xml")
